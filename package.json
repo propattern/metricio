@@ -20,6 +20,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "aws-sdk": "^2.711.0",
+    "axios": "^0.19.2",
+    "axois": "^0.0.1-security",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",

@@ -11,6 +11,7 @@ import config from './config';
 import logger from './lib/logger';
 import * as storage from './lib/storage';
 import startJobs from './lib/jobs';
+import { environmentHealthCheckRoute } from './src/routes/environmentHealthCheck';
 
 const env = process.env.NODE_ENV || 'development';
 const RedisStore = connectRedis(session);
@@ -57,6 +58,8 @@ app.get('/:dashboard', (req, res) => {
     layout: false,
   });
 });
+
+app.get('/aws/health/:env', environmentHealthCheckRoute);
 
 if (process.env.NODE_ENV === 'production') {
   app.use('/dist', express.static('dist'));
